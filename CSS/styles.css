@@ -1,0 +1,368 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f5cd4e;
+  background-size: cover;
+  background-position-y: bottom;
+  font-family: "Helvetica", sans-serif;
+  overflow-x: hidden;
+}
+
+.searchReset-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.searchReset-container i {
+  cursor: pointer;
+}
+
+.fa-redo-alt {
+  margin-top: 3px;
+  transform: rotate(180deg);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.5s ease;
+}
+
+.fa-redo-alt:hover {
+  transform: rotate(900deg);
+}
+
+.search-container {
+  background: white;
+  width: clamp(240px, 50vw, 300px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+  border-radius: 20px;
+  margin-left: 25px;
+}
+
+.search-error {
+  cursor: default;
+  position: absolute;
+  top: 60px;
+  right: 85px;
+  color: white;
+  background: rgba(0, 0, 0, 0.281);
+  opacity: 0;
+  padding: 10px;
+  border-radius: 4px;
+  transform: translateY(-20px);
+  transition: 0.3s ease;
+  z-index: -1;
+}
+
+.search-error::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.281);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.search-error.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+input {
+  background: #ffde73;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-size: 18px;
+  width: 100%;
+  height: 30px;
+  outline: none;
+  color: white;
+  z-index: 1;
+  margin-right: 4px;
+  padding-left: 10px;
+}
+
+.search-container i {
+  margin: 0 15px 0 10px;
+}
+
+::placeholder {
+  color: white;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  perspective-origin: center;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+.pokeball-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 23px;
+  padding: 0 10px;
+}
+
+.name {
+  font-family: "Helvetica", sans-serif;
+  color: rgb(255, 255, 255);
+  /* text-shadow: 1px 0px 0px black, 0px 1px 0px black, -1px 0px 0px black,
+    0px -1px 0px black; */
+  transition: 0.2s ease;
+  border: 3px solid white;
+  padding: 4px;
+  border-radius: 3px;
+  text-transform: capitalize;
+}
+
+.name.active {
+  opacity: 0;
+}
+
+.pokeball {
+  width: 100px;
+  height: 100px;
+  border: 12px solid black;
+  border-radius: 50%;
+  background: linear-gradient(red 50%, white 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.6s ease;
+  backface-visibility: hidden;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.pokeball.active {
+  border-radius: 10px;
+  height: 500px;
+  width: 250px;
+  transform: rotatey(180deg);
+}
+
+.line {
+  position: relative;
+  height: 10px;
+  background: black;
+  width: 100%;
+  z-index: 0;
+}
+
+.button {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 10px solid black;
+  border-radius: 50%;
+  background: white;
+  z-index: 1;
+}
+
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  transform: rotatey(-180deg);
+  transition: 0.6s ease;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, #8ce879 50%, #d18fe6 50%);
+  overflow: hidden;
+}
+
+.card.active {
+  transform: rotatey(0);
+  border-radius: 20px;
+  height: 500px;
+  width: 250px;
+}
+
+.title-info {
+  color: whitesmoke;
+}
+
+h1 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.types {
+  display: flex;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.card div span {
+  font-size: 15px;
+  margin-left: 8px;
+  padding: 5px 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.imgContainer {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3%;
+}
+
+.card img {
+  position: absolute;
+  top: 5%;
+  width: 120px;
+}
+
+.detailsContainer {
+  margin-top: 10px;
+  width: 100%;
+  height: 55%;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+h3 {
+  align-self: center;
+}
+.details {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+}
+
+.detailHeading {
+  width: 50%;
+  color: rgb(126, 126, 126);
+  margin-right: 50px;
+}
+
+p {
+  width: 121%;
+}
+
+#back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 0 0 100% 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#back div {
+  cursor: pointer;
+  display: flex;
+}
+
+#forward div {
+  display: flex;
+}
+
+#forward {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 100% 0 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+#back div:hover {
+  animation: arrowBackMove 0.4s ease forwards;
+}
+
+#forward div:hover {
+  animation: arrowForwardMove 0.4s ease forwards;
+}
+
+#forward i:first-of-type {
+  margin-right: 50px;
+}
+
+#forward i {
+  margin-bottom: 7px;
+  margin-right: 10px;
+}
+
+#back i:last-of-type {
+  margin-left: 50px;
+}
+
+#back i {
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+@keyframes arrowBackMove {
+  to {
+    transform: translateX(-63.725%);
+  }
+}
+
+@keyframes arrowForwardMove {
+  to {
+    transform: translateX(63.725%);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .pokeball-container {
+    padding: 0;
+  }
+}
