@@ -10,7 +10,7 @@
 
 ## Overview
 
-A site that first presents five pokeballs with name descriptors underneath. Upon clicking, the pokeball transforms into a pokemon card with some stats and a picture. There are next and previous buttons for producing another set of pokeballs and a search bar if you're looking for something specific. All of the information is fetched by the PokeAPI.
+A site that first presents five pokeballs with name descriptors underneath. Upon clicking, the pokeball transforms into a pokemon card with some stats and a picture. There are next and previous buttons for producing another set of pokeballs and a search bar if you're looking for a specific pokemon. All of the information is fetched by the PokeAPI.
 
 
 ### Screenshot
