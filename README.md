@@ -34,4 +34,5 @@ A site that firsts presents five pokeballs with name descriptors underneath. Upo
 
 ## Author
 
-- Website - [Ronald Terblanche] https:ronaldterblanche.netlify.com
+- Ronald Terblanche
+- Website: https:ronaldterblanche.netlify.com
