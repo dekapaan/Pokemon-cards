@@ -15,7 +15,7 @@ A site that firsts presents five pokeballs with name descriptors underneath. Upo
 
 ### Screenshot
 
-./screenshot.jpg
+./Screenshot.jpg
 
 
 ### Links
